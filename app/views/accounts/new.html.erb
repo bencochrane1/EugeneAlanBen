@@ -1,0 +1,28 @@
+<div class="col-md-6 col-md-offset-3 panel panel-default">
+  <div class="panel-body">
+    <h2>Create a School</h2>
+
+    <%= simple_form_for @account do |f| %>
+
+      <%= f.fields_for :owner do |o| %>
+
+        <%= o.input :name %>
+        <%= o.input :email %>
+        <%= o.input :password %>
+        <%= o.input :password_confirmation %>
+
+      <% end %>
+    
+
+      <%= f.input :subdomain do %>
+        <div class="input-group">
+          <%= f.input_field :subdomain, class: 'form-control' %>
+          <span class="input-group-addon">.getsensei.co</span>
+        </div>
+      <% end %>
+
+      <%= f.button :submit, class: 'btn-primary' %>
+      
+    <% end %>
+  </div>
+</div>
