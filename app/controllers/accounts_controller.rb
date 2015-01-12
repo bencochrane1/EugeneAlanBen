@@ -1,7 +1,8 @@
 class AccountsController < ApplicationController
 
   # skip_before_filter :authenticate_user!, only: [:new, :create]
-  skip_filter :authenticate_user!, only: [:new, :create]
+  skip_before_filter :authenticate_user!, only: [:index, :new, :create]
+
 
   def new
     @account = Account.new
@@ -18,6 +19,11 @@ class AccountsController < ApplicationController
     else
         render action: 'new'
     end
+  end
+
+  def index
+    @accounts = Account.all
+    # @account = Account.where(@account.subdomain)
   end
 
 

@@ -14,7 +14,7 @@ end
 
 Rails.application.routes.draw do
   constraints(SubdomainPresent) do
-    root 'projects#index', as: :subdomain_root
+    root 'accounts#index', as: :subdomain_root
     devise_for :users
     resources :users, only: :index
     resources :projects, except: [:index, :show, :destroy]
