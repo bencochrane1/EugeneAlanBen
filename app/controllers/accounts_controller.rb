@@ -1,7 +1,7 @@
 class AccountsController < ApplicationController
 
   # skip_before_filter :authenticate_user!, only: [:new, :create]
-  skip_before_filter :authenticate_user!, only: [:index, :new, :create, :new, :show]
+  skip_before_filter :authenticate_user!, only: [:index, :new, :create, :show]
 
 
   def new
