@@ -238,6 +238,7 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   pg
+  pry
   rails (= 4.1.8)
   rspec-rails
   sass-rails (~> 4.0.3)

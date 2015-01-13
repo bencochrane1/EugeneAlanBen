@@ -18,7 +18,8 @@ Apartment.configure do |config|
   # config.excluded_models = %w{Tenant}
   #
   config.excluded_models = %w{Account}
-  config.tenant_names = -> { Account.pluck(:subdomain) }
+  # config.tenant_names = -> { Account.pluck(:subdomain) }
+  config.tenant_names = ['golf', 'alan']
   
 
   # use postgres schemas?
@@ -50,4 +51,4 @@ end
 
 # Rails.application.config.middleware.use 'Apartment::Elevators::Domain'
 
-Rails.application.config.middleware.use 'Apartment::Elevators::Subdomain'
+# Rails.application.config.middleware.use 'Apartment::Elevators::Subdomain'
