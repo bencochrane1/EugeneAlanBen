@@ -36,6 +36,9 @@ Apartment.configure do |config|
 
   # supply list of database names for migrations to run on
   # config.tenant_names = lambda{ ToDo_Tenant_Or_User_Model.pluck :database }
+
+  # Seeds after Creating
+  config.seed_after_create = true
 end
 
 ##
