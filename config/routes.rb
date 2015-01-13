@@ -22,8 +22,7 @@ Rails.application.routes.draw do
       get "logout", to: "devise/sessions#destroy"
       get "register", to: "devise/registrations#new"
     end
-
-
+    
     # resources :users, only: :index
     resources :users
     resources :projects, except: [:index, :show, :destroy]
