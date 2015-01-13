@@ -17,6 +17,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'spring',        group: :development
 gem 'wistia-api'
+gem 'jquery-ui-rails'
+gem 'ranked-model'
 
 
 group :development, :test do
