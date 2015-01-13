@@ -25,13 +25,14 @@ Rails.application.routes.draw do
     
     # resources :users, only: :index
     resources :users
-    resources :projects, except: [:index, :show, :destroy]
+    resources :projects
+    resources :accounts
     root 'accounts#index', as: :subdomain_root
   end
   
   constraints(SubdomainBlank) do
     root 'welcome#index'
-    resources :accounts, only: [:new, :create]
+    resources :accounts, only: [:new, :create, :edit]
   end
 end
 

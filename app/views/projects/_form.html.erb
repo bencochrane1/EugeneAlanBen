@@ -4,10 +4,6 @@
   <%= f.input :name %>
   <%= f.input :subtitle %>
   <%= f.input :description %>
-
-  <% if @project.persisted? %>
-    <%= f.input :archived, as: :boolean %>
-  <% end %>
   
   <%= f.button :submit, class: 'btn-primary' %>
 <% end %>
