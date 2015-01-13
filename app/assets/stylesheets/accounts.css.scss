@@ -2,3 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+h1 {
+  
+}
+
+.container {
+  
+}
+
+.container h1 {
+  text-align: center;
+}
+
+.container h2 {
+  text-align: center;
+}
+
+.banner {
+  padding-top: 100px;
+  background-image: url("http://p1.pichost.me/i/67/1916561.jpg");
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 100%
+}
+
+#home-body {
+  margin: 10px auto;
+}

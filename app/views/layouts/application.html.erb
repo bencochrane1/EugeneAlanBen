@@ -7,8 +7,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-
 <header class"container">
     <nav class="navbar navbar-default">
         <div class="navbar-header">
@@ -31,26 +29,14 @@
 
           <div class="pull-right right-button">
             <% elsif !user_signed_in? && current_account%>
-            <%= link_to 'Sign in', users_path, class: 'btn btn-default navbar-btn' %>
+            <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-default navbar-btn' %>
           </div>
         <% end %>
     </nav>
 
 </header>
 
-
-
-<div class="container">
-
-    <%= flash_messages if show_layout_flash? %>
-
-    <div class="row">
-
         <%= yield %>
-    
-    </div>
-
-</div>
 
 </body>
 </html>
