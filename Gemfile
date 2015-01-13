@@ -6,6 +6,7 @@ gem 'devise'
 gem 'devise_invitable'
 gem 'apartment'
 gem 'simple_form'
+gem 'pry'
 
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'

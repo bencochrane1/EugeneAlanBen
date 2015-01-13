@@ -5,9 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+binding.pry
 
+Apartment::Tenant.drop('golf') rescue nil
 Apartment::Tenant.create('golf')
 Apartment::Tenant.switch('golf')
+
 
 
 user_one = User.create({
@@ -17,7 +20,7 @@ user_one = User.create({
     })
 
 acc_one = Account.create({
-        subdomain: "golf",
+        # subdomain: "golf",
         owner: user_one,
         tagline: "Turn into Tiger!",
         description: "This will teach you to become Tiger Woods real quick."
