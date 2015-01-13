@@ -31,7 +31,7 @@
 
           <div class="pull-right right-button">
             <% elsif !user_signed_in? && current_account%>
-            <%= link_to 'Sign in', users_path, class: 'btn btn-default navbar-btn' %>
+            <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-default navbar-btn' %>
           </div>
         <% end %>
     </nav>
