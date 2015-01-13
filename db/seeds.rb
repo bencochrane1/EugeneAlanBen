@@ -6,21 +6,4 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Apartment::Tenant.create('golf')
-Apartment::Tenant.switch('golf')
-
-
-user_one = User.create({
-    name: "alan",
-    email: "alan@alan.com",
-    password: "password"
-    })
-
-acc_one = Account.create({
-        subdomain: "golf",
-        owner: user_one,
-        tagline: "Turn into Tiger!",
-        description: "This will teach you to become Tiger Woods real quick."
-    })
-
 
