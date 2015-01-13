@@ -21,7 +21,12 @@
 </div>
 
 <div>
-  <%= current_account.loop through all the things project %>
+  <!-- <%= current_account.projects.first.name %> -->
+  <% current_account.projects.each do |project| %>
+    <div>
+      <%= project.name %>
+    </div>
+  <% end %>
 </div>
 
 <% end %> 

@@ -1,18 +1,18 @@
 class ProjectsController < ApplicationController
     def index
-        @projects = Project.all
+        @projects = current_account.projects.all
     end
 
     def show
-        @project = Project.find(params[:id])
+        @project = current_account.projects.find(params[:id])
     end
 
     def new
-        @project = Project.new
+        @project = current_account.projects.new
     end
 
     def create
-        @project = Project.new(project_params)
+        @project = current_account.projects.build(project_params)
         if @project.save
             redirect_to root_path, notice: "Project created"
         else
@@ -21,11 +21,11 @@ class ProjectsController < ApplicationController
     end
 
     def edit
-        @project = Project.find(params[:id])
+        @project = current_account.projects.find(params[:id])
     end
 
     def update
-       @project = Project.find(params[:id])
+       @project = current_account.projects.find(params[:id])
        
         if @project.update(project_params)
             redirect_to root_path, notice: "Project updated"
@@ -33,7 +33,6 @@ class ProjectsController < ApplicationController
             render :edit
         end
     end
-
 
     private
 
