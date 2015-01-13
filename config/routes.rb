@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     resources :users
     resources :projects
     resources :accounts
+    resources :lessons
     root 'accounts#index', as: :subdomain_root
   end
   
