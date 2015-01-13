@@ -13,6 +13,8 @@ class SubdomainBlank
 end
 
 Rails.application.routes.draw do
+  get 'lessons/index'
+
   constraints(SubdomainPresent) do
     
     devise_for :users
