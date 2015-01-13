@@ -2,7 +2,8 @@
                     wrapper_mappings: { boolean: :vertical_boolean }) do |f| %>
 
   <%= f.input :name %>
-  <%= f.input :client %>
+  <%= f.input :subtitle %>
+  <%= f.input :description %>
 
   <% if @project.persisted? %>
     <%= f.input :archived, as: :boolean %>

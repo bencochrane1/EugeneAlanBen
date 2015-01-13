@@ -14,10 +14,19 @@ end
 
 Rails.application.routes.draw do
   constraints(SubdomainPresent) do
-    root 'accounts#index', as: :subdomain_root
+    
     devise_for :users
-    resources :users, only: :index
+
+    devise_scope :user do
+      # get "login", to: "devise/sessions#new"
+      # get "logout", to: "devise/sessions#destroy"
+      get "register", to: "devise/registrations#new"
+    end
+    
+    # resources :users, only: :index
+    resources :users
     resources :projects, except: [:index, :show, :destroy]
+    root 'accounts#index', as: :subdomain_root
   end
   
   constraints(SubdomainBlank) do
