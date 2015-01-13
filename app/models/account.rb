@@ -1,6 +1,7 @@
 class Account < ActiveRecord::Base
     RESTRICTED_SUBDOMAINS = %w[www]
 
+    has_many :projects
     belongs_to :owner, class_name: 'User'
     validates :owner, presence: true
 
@@ -13,6 +14,7 @@ class Account < ActiveRecord::Base
     accepts_nested_attributes_for :owner
 
     before_validation :downcase_subdomain
+
 
     private
 
