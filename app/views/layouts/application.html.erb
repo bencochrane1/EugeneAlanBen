@@ -12,7 +12,11 @@
 <header class"container">
     <nav class="navbar navbar-default">
         <div class="navbar-header">
+          <% if current_account %>
+            <%= link_to current_account.subdomain , root_path, class: 'navbar-brand' %>
+          <% else %>
             <%= link_to 'Sensei', root_path, class: 'navbar-brand' %>
+          <% end %>
         </div>
 
         <div class="pull-right right-button">
