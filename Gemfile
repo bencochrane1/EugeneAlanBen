@@ -21,6 +21,7 @@ gem 'spring',        group: :development
 gem 'wistia-api'
 gem 'jquery-ui-rails'
 gem 'ranked-model'
+gem 'wistia-uploader'
 
 
 group :development, :test do
