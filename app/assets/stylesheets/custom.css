@@ -70,3 +70,11 @@ footer {
 	position: relative;
 	bottom: 0;
 }
+
+.placeholder {
+    background-color: grey;
+}
+
+.lesson-left {
+    height: 500px;
+}

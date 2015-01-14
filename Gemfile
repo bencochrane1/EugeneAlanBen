@@ -8,6 +8,9 @@ gem 'apartment'
 gem 'simple_form'
 gem 'pry'
 
+gem 'wistia-api'
+gem 'multipart-post'
+
 gem 'carrierwave', '~> 0.9'
 
 gem 'bootstrap-sass', '~> 3.3.1'
@@ -21,6 +24,7 @@ gem 'spring',        group: :development
 gem 'wistia-api'
 gem 'jquery-ui-rails'
 gem 'ranked-model'
+gem 'wistia-uploader'
 
 
 group :development, :test do
