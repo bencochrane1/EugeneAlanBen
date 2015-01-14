@@ -18,7 +18,9 @@
         <%= link_to edit_project_path(project), class: "icon-link" do %>
         <small><i class="glyphicon glyphicon-cog"></i></small>
         <% end %>
-        <small><i class="glyphicon glyphicon-plus-sign"></i></small>
+        <%= link_to project_path(project), method: :delete do %>
+        <small><i class="glyphicon glyphicon-trash"></i></small>
+        <% end %>
       </div>
     </h3>
     <p>
