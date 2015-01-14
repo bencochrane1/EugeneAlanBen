@@ -1,0 +1,8 @@
+<%= simple_form_for(current_account, wrapper_mappings: { boolean: :vertical_boolean }, html: {multipart: true}) do |f| %>
+
+  <%= f.input :tagline %>
+  <%= f.input :description %>
+  <%= f.input :school_logo_attachments %>
+  
+  <%= f.button :submit, class: 'btn-primary' %>
+<% end %>

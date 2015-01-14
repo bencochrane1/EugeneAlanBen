@@ -8,6 +8,8 @@ gem 'apartment'
 gem 'simple_form'
 gem 'pry'
 
+gem 'carrierwave', '~> 0.9'
+
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
 
