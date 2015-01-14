@@ -8,7 +8,8 @@
 </head>
 <body>
   <header>
-    <nav class="card navbar navbar-default">
+  <div id="wrap">
+    <nav class="navbar navbar-material-blue-800">
       <div class="navbar-header">
         <% if current_account %>
         <%= link_to current_account.subdomain , root_path, class: 'navbar-brand' %>
@@ -35,17 +36,22 @@
         <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-default navbar-btn' %>
       </div>
       <% end %>
+      </div>
     </nav>
 
   </header>
 
   <%= yield %>
 
-  <footer class="card card-footer">
-    <div class="container">
-      <p class="muted credit"> Sensei <a href="#">Eugene</a> and <a href="#">Alan</a> and <a href="#">Ben</a>.</p>
+</div>
+
+<footer class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <p>Hey</p>
     </div>
-  </footer> 
+  </div>
+</footer>
 
 </body>
 </html>

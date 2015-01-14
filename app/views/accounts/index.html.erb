@@ -2,41 +2,48 @@
 
 
 <% if user_signed_in? %>
-
-  <div class="jumbotron jumbotron-front-page">
+<div class="jumbotron jumbotron-front-page" style="background-image: url('<%= image_path(current_account.school_logo_attachments) %>');">
+  <div class="container front-page">
     <h1><%= current_account.subdomain %></h1>
-    <h2>Because We believe in online education</h2>
+  </div>
+</div>
+
+<!-- <div class="school-background-container">
+<%# image_tag current_account.school_logo_attachments, class: "school-background" %>
+</div> -->
+
+<div class="container">
+
+  <div class="row">
+
+    <div id="home-body">
+      <div id="about">
+        <h1> About the school </h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam reprehenderit aliquam totam nobis provident harum fuga a animi non soluta reiciendis earum adipisci amet rem, repudiandae sequi, libero debitis dolor! Lorem ipsum dolor sit amet, consectetur adipisicing elit! </p>
+      </div>
+      <div id="courses">
+        <h1>The courses</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam reprehenderit aliquam totam nobis provident harum fuga a animi non soluta reiciendis earum adipisci amet rem, repudiandae sequi, libero debitis dolor!Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        </p>
+      </div>
+    </div>
   </div>
 
-  <div class="container front-page">
+  <div class="row">
+    <% current_account.projects.each do |project| %>
 
-    <div class="row">
-
-      <div id="home-body">
-        <div id="about">
-          <h1> About the school </h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam reprehenderit aliquam totam nobis provident harum fuga a animi non soluta reiciendis earum adipisci amet rem, repudiandae sequi, libero debitis dolor! Lorem ipsum dolor sit amet, consectetur adipisicing elit! </p>
-        </div>
-        <div id="courses">
-          <h1>The courses</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam reprehenderit aliquam totam nobis provident harum fuga a animi non soluta reiciendis earum adipisci amet rem, repudiandae sequi, libero debitis dolor!Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-          </p>
-        </div>
+    <div class="col-md-6">
+      <div class="project_box">
+        <%= project.name %>
+        <%= project.subtitle %>
       </div>
     </div>
 
-    <div class="row">
-      <% current_account.projects.each do |project| %>
-
-      <div class="col-md-6">
-        <div class="project_box">
-          <%= project.name %>
-          <%= project.subtitle %>
-        </div>
-      </div>
-
-      <% end %>
+    <% end %>
   </div>
 
-<% end %> 
+
+  <!-- <p><%= image_tag current_account.school_logo_attachments %></p> -->
+
+  <% end %> 
 

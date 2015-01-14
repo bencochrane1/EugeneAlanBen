@@ -1,12 +1,28 @@
 .jumbotron-front-page {
 	text-align: center !important;	
 	padding: 260px;
-	color: white;
-	background-image: url('practice-bg-.svg');
-	background-repeat: none;
-	background-position: center center;
-	background-size: cover;
 	height: 400px;
+	color: white;
+	background-repeat: none;
+	background-position: top center;
+	background-size: cover;
+}
+
+.jumbotron-front-page h1 {
+	font-weight: 900px;
+	font-size: 84px;
+	text-shadow: 0 2px rgba(255, 255, 255, 0.6);			
+}
+
+.school-background {
+	width: 100%;
+	z-index: 1;
+}
+
+.school-background-container {
+	height: 400px;
+	overflow: hidden;
+	position: relative;
 }
 
 .navbar.navbar, .navbar-default.navbar {
@@ -19,6 +35,21 @@
 	background-color: #ffffff;
 }
 
+#wrap {
+	height: 100%;
+}
+
+/* Offsets */
+.box-header {
+	margin-top: 8%;
+}
+
+.form-style {
+margin-top: 5%;
+}
+
 footer {
-	margin-top: 10%;
+	margin-top: 50px;
+	position: relative;
+	bottom: 0;
 }

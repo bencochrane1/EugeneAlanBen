@@ -1,29 +1,31 @@
-<div class="col-md-12">
+<div class="container">
+  <div class="col-md-12 form-style panel panel-body">
 
     <% if @projects.count == 0 %>
 
-        <ul class="list-group">
-          <li class="list-group-item">No entries yet!</li>
-        </ul>
+    <ul class="list-group">
+      <li class="list-group-item">No entries yet!</li>
+    </ul>
 
     <% else %>
 
 
     <% @projects.each do |project| %>
-        <h3>
-          <%= project.name %>
-          <small><%= project.subtitle %></small>
-          <div class="pull-right">
-            <%= link_to edit_project_path(project), class: "icon-link" do %>
-              <small><i class="glyphicon glyphicon-cog"></i></small>
-            <% end %>
-            <small><i class="glyphicon glyphicon-plus-sign"></i></small>
-          </div>
-        </h3>
-        <p>
-          <%= project.description %>
-        </p>
+    <h3>
+      <%= project.name %>
+      <small><%= project.subtitle %></small>
+      <div class="pull-right">
+        <%= link_to edit_project_path(project), class: "icon-link" do %>
+        <small><i class="glyphicon glyphicon-cog"></i></small>
+        <% end %>
+        <small><i class="glyphicon glyphicon-plus-sign"></i></small>
+      </div>
+    </h3>
+    <p>
+      <%= project.description %>
+    </p>
     <% end %>
 
     <% end %>
+  </div>
 </div>
