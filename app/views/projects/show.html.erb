@@ -5,3 +5,34 @@
 <%= lesson.name %>
 <% end %>
 <%= link_to 'New Lesson', new_project_lesson_path(@project)%>
+
+
+
+<div class="col-md-8 col-md-offset-2">
+  <h2>Lessons for <%= @project.name %></h2>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @project.lessons.each do |lesson| %>
+            <tr>
+              <td><%= link_to lesson.name, project_lesson_path(@project, lesson) %></td>
+              <td><%= lesson.description %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+
+
+    </div>
+  </div>
+</div>
+

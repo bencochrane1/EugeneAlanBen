@@ -12,7 +12,7 @@
 
     <% @projects.each do |project| %>
     <h3>
-      <%= project.name %>
+      <%= link_to project.name, project_path(project) %>
       <small><%= project.subtitle %></small>
       <div class="pull-right">
         <%= link_to edit_project_path(project), class: "icon-link" do %>
