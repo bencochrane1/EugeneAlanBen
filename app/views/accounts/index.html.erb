@@ -34,7 +34,7 @@
 
     <div class="col-md-6">
       <div class="project_box">
-        <%= project.name %>
+        <%= link_to project.name, project_path(project) %>
         <%= project.subtitle %>
       </div>
     </div>
