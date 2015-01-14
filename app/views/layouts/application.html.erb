@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-  <div id="wrap">
+  <div class="page-wrap">
     <nav class="navbar navbar-material-blue-800">
       <div class="navbar-header">
         <% if current_account %>
@@ -28,7 +28,7 @@
         <li><%= link_to 'New Course', new_project_path %></li>               
         <li><%= link_to 'Users', users_path %></li>
         <%# binding.pry %>
-        <li><%= link_to 'Edit', edit_account_path(current_account) %></li>
+        <li><%= link_to 'School Settings', edit_account_path(current_account) %></li>
       </ul>
 
       <div class="pull-right right-button">
@@ -45,13 +45,12 @@
 
 </div>
 
-<footer class="container-fluid">
+<!-- <footer class="site-footer">
   <div class="container">
     <div class="row">
-      <p>Hey</p>
     </div>
   </div>
-</footer>
+</footer> -->
 
 </body>
 </html>
