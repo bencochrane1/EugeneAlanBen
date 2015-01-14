@@ -12,6 +12,7 @@
     <nav class="navbar navbar-material-blue-800">
       <div class="navbar-header">
         <% if current_account %>
+        <%= link_to image_tag(current_account.school_logo_attachments, border: 0), subdomain_root_path, class: "school-logo" %>
         <%= link_to current_account.subdomain , root_path, class: 'navbar-brand' %>
         <% else %>
         <%= link_to 'Sensei', root_path, class: 'navbar-brand' %>

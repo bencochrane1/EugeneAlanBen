@@ -19,6 +19,21 @@ html, body {
 .site-footer {
 }
 
+a.school-logo img {
+width: 48px;
+position: relative;
+top: 8px;
+border-radius: 50%;
+}
+
+.navbar .navbar-brand {
+position: relative;
+top: -5px;
+height: 60px;
+line-height: 30px;
+color: inherit;
+}
+
 .jumbotron-front-page {
 	text-align: center !important;	
 	padding: 260px;
@@ -32,6 +47,7 @@ html, body {
 .jumbotron-front-page h1 {
 	font-weight: 900px;
 	font-size: 84px;
+	text-transform: uppercase;
 	text-shadow: 0 2px rgba(255, 255, 255, 0.6);			
 }
 

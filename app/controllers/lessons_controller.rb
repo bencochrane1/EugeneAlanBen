@@ -4,9 +4,9 @@ require 'net/http'
 
 class LessonsController < ApplicationController
   def index
-    @projects = current_project.all
+    @projects = current_account.projects.find(params[:project_id])
     @lessons = @projects.lessons.all
-    redirect_to project_lesson_path(@project, lesson)
+    redirect_to project_lesson_path(@lessons, @project)
   end
 
   def new

@@ -48,7 +48,7 @@ class AccountsController < ApplicationController
   private
   
   def account_params
-    params.require(:account).permit(:subdomain, :tagline, :description, :school_logo_attachments, owner_attributes: [:name, :email, :password, :password_confirmation])
+    params.require(:account).permit(:subdomain, :tagline, :description, :school_logo_attachments, :school_background_attachments, owner_attributes: [:name, :email, :password, :password_confirmation])
       
   end
 
