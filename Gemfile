@@ -10,21 +10,21 @@ gem 'pry'
 
 gem 'wistia-api'
 gem 'multipart-post'
+gem 'wistia-uploader'
 
 gem 'carrierwave', '~> 0.9'
 
 gem 'bootstrap-sass', '~> 3.3.1'
-gem 'autoprefixer-rails'
+gem 'autoprefixer-rails', '~> 4.0.2.2'
 
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'spring',        group: :development
-gem 'wistia-api'
 gem 'jquery-ui-rails'
 gem 'ranked-model'
-gem 'wistia-uploader'
+gem "tzinfo-data"
 
 
 group :development, :test do
