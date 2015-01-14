@@ -1,33 +1,42 @@
-<%= stylesheet_link_tag    'accounts' %>
+<%= stylesheet_link_tag 'accounts' %>
 
 
 <% if user_signed_in? %>
-<div class="container">
-  <div class="banner">
-    <h1 class="container h1"><%= current_account.subdomain %></h1>
-    <h2 class="container h2">Because We believe in online education</h2>
-  </div>
-  <div id="home-body">
-    <div id="about">
-      <h1> About the school </h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam reprehenderit aliquam totam nobis provident harum fuga a animi non soluta reiciendis earum adipisci amet rem, repudiandae sequi, libero debitis dolor! Lorem ipsum dolor sit amet, consectetur adipisicing elit! </p>
-    </div>
-    <div id="courses">
-      <h1>The courses</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam reprehenderit aliquam totam nobis provident harum fuga a animi non soluta reiciendis earum adipisci amet rem, repudiandae sequi, libero debitis dolor!Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-      </p>
-    </div>
-  </div>
-</div>
 
-<div>
-  <!-- <%= current_account.projects.first.name %> -->
-  <% current_account.projects.each do |project| %>
-    <div>
-      <%= project.name %>
+  <div class="jumbotron jumbotron-front-page">
+    <h1><%= current_account.subdomain %></h1>
+    <h2>Because We believe in online education</h2>
+  </div>
+
+  <div class="container front-page">
+
+    <div class="row">
+
+      <div id="home-body">
+        <div id="about">
+          <h1> About the school </h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam reprehenderit aliquam totam nobis provident harum fuga a animi non soluta reiciendis earum adipisci amet rem, repudiandae sequi, libero debitis dolor! Lorem ipsum dolor sit amet, consectetur adipisicing elit! </p>
+        </div>
+        <div id="courses">
+          <h1>The courses</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam reprehenderit aliquam totam nobis provident harum fuga a animi non soluta reiciendis earum adipisci amet rem, repudiandae sequi, libero debitis dolor!Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+          </p>
+        </div>
+      </div>
     </div>
-  <% end %>
-</div>
+
+    <div class="row">
+      <% current_account.projects.each do |project| %>
+
+      <div class="col-md-6">
+        <div class="project_box">
+          <%= project.name %>
+          <%= project.subtitle %>
+        </div>
+      </div>
+
+      <% end %>
+  </div>
 
 <% end %> 
 
