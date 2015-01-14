@@ -32,6 +32,12 @@ class ApplicationController < ActionController::Base
 
     helper_method :current_account
 
+    def current_project
+      @current_project ||= current_account.projects.find_by(params[:id])          
+    end
+
+    helper_method :current_project
+
 
     def set_mailer_host
       subdomain = current_account ? "#{current_account.subdomain}." : ""

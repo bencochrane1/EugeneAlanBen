@@ -1,0 +1,7 @@
+<h1><%= @project.name %></h1>
+
+
+<% @project.lessons.each do |lesson|  %>
+<%= lesson.name %>
+<% end %>
+<%= link_to 'New Lesson', new_project_lesson_path(@project)%>

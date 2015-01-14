@@ -1,0 +1,12 @@
+<%# binding.pry %>
+
+<%= simple_form_for([@project, @lesson],
+                    wrapper_mappings: { boolean: :vertical_boolean }) do |f| %>
+
+  <%= f.input :name %>
+  <%= f.input :video %>
+  <%= f.input :description %>
+  <%= f.input :pdf %>
+
+  <%= f.button :submit, class: 'btn-primary' %>
+<% end %>
