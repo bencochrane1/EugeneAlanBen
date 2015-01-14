@@ -1,10 +1,10 @@
 <%# binding.pry %>
 
 <%= simple_form_for([@project, @lesson],
-                    wrapper_mappings: { boolean: :vertical_boolean }) do |f| %>
+                    wrapper_mappings: { boolean: :vertical_boolean }, input_html: {multipart: true}) do |f| %>
 
   <%= f.input :name %>
-  <%= f.input :video %>
+  <%= f.input :video, as: :file %>
   <%= f.input :description %>
   <%= f.input :pdf %>
 
