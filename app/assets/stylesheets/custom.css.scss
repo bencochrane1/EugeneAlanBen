@@ -17,21 +17,6 @@ html, body {
   display: block;
 }
 
-.site-footer, .page-wrap:after {
-  height: 142px; 
-}
-
-.site-footer {
-}
-
-
-a.school-logo img {
-  width: 48px;
-  position: relative;
-  top: 8px;
-  border-radius: 50%;
-}
-
 .navbar {
   border-radius: 0 !important;
 }
@@ -44,6 +29,10 @@ a.school-logo img {
   color: inherit;
 }
 
+.navbar.navbar, .navbar-default.navbar {
+  margin: 0;
+}
+
 .jumbotron body {
   border-radius: 0 !important;  
 }
@@ -51,10 +40,10 @@ a.school-logo img {
 .jumbotron-front-page {
   text-align: center !important;  
   padding: 260px;
-  height: 10px;
+  height: 400px;
   color: white;
   background-repeat: none;
-  background-position: top center;
+  background-position: center center;
   background-size: cover;
   border-radius: 0 !important;
 }
@@ -71,22 +60,6 @@ a.school-logo img {
   z-index: 1;
 }
 
-.school-background-container {
-  height: 400px;
-  overflow: hidden;
-  position: relative;
-}
-
-.navbar.navbar, .navbar-default.navbar {
-  margin: 0;
-}
-
-.project_box {
-  height: 150px;
-  padding: 25px;
-  background-color: #ffffff;
-}
-
 /* Offsets */
 .box-header {
   margin-top: 8%;
@@ -94,12 +67,6 @@ a.school-logo img {
 
 .form-style {
   margin-top: 5%;
-}
-
-footer {
-  margin-top: 50px;
-  position: relative;
-  bottom: 0;
 }
 
 .placeholder {
