@@ -25,6 +25,7 @@ gem 'spring',        group: :development
 gem 'jquery-ui-rails'
 gem 'ranked-model'
 gem "tzinfo-data"
+
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 
