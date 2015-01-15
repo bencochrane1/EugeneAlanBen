@@ -14,10 +14,12 @@ end
 
 Rails.application.routes.draw do
   get 'lessons/index'
+  # get '/projects/:project_id/lessons(.:format)', to: redirect('/projects/:project_id(.:format)')
 
   constraints(SubdomainPresent) do
     
-    devise_for :users
+    devise_for :users, :controllers => { :registrations => "registrations" }
+
 
     devise_scope :user do
       # get "login", to: "devise/sessions#new"
@@ -26,6 +28,7 @@ Rails.application.routes.draw do
     end
     
     # resources :users, only: :index
+    resources :subscribe
     resources :users
     resources :projects do
       resources :lessons

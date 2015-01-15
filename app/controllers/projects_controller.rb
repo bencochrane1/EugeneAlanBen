@@ -1,4 +1,7 @@
 class ProjectsController < ApplicationController
+
+    before_filter :authenticate_user!
+
     def index
         @projects = current_account.projects.all
     end
@@ -14,7 +17,7 @@ class ProjectsController < ApplicationController
     def create
         @project = current_account.projects.build(project_params)
         if @project.save
-            redirect_to root_path, notice: "Project created"
+            redirect_to project_path(@project), notice: "Project created"
         else
             render :new
         end
@@ -28,7 +31,7 @@ class ProjectsController < ApplicationController
        @project = current_account.projects.find(params[:id])
        
         if @project.update(project_params)
-            redirect_to root_path, notice: "Project updated"
+            redirect_to projects_path, notice: "Project updated"
         else 
             render :edit
         end

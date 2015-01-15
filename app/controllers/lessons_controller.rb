@@ -5,8 +5,8 @@ require 'net/http'
 class LessonsController < ApplicationController
 
   def index
-    @projects = current_account.projects.find(params[:project_id])
-    @lessons = @projects.lessons.all
+    @project = current_account.projects.find(params[:project_id])
+    @lessons = @project.lessons.all
     redirect_to project_lesson_path(@lessons, @project)
   end
 
@@ -17,10 +17,11 @@ class LessonsController < ApplicationController
     @lesson = current_project.lessons.build
   end
 
-  def create
+  def create 
+    @project = current_account.projects.find(params[:project_id])    
     @lesson = current_project.lessons.create(lesson_params)
     if @lesson.save
-      redirect_to project_lessons_path, notice: "Lesson created"
+      redirect_to project_lesson_path(@project, @lesson), notice: "Lesson created"
     else
       render :new
     end
@@ -29,14 +30,31 @@ class LessonsController < ApplicationController
   def show
     @project = current_account.projects.find(params[:project_id])
     @lesson = @project.lessons.find(params[:id])
+    @lessons = @project.lessons.all
       # @video = Wistia::Media.find(:all).elements[0].attributes[:hashed_id]
   end
 
-
   def edit
-
     @project = current_account.projects.find(params[:project_id])
-    @lesson = @project.lessons.find(params[:id])   
+    @lesson = @project.lessons.find(params[:id])    
+  end
+
+  def update
+     @project = current_account.projects.find(params[:project_id])
+     @lesson = @project.lessons.find(params[:id]) 
+     
+      if @lesson.update(lesson_params)
+        redirect_to project_lesson_path, notice: "Lesson updated"
+      else 
+        render :edit
+      end
+  end
+
+  def destroy
+    @project = current_account.projects.find(params[:project_id])
+    @lesson = @project.lessons.find(params[:id])
+    @lesson.destroy
+    redirect_to project_path(@project), notice: "Lesson deleted"
   end
 
   def update
