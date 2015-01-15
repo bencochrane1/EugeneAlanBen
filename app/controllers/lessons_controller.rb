@@ -5,8 +5,8 @@ require 'net/http'
 class LessonsController < ApplicationController
 
   def index
-    @projects = current_account.projects.find(params[:project_id])
-    @lessons = @projects.lessons.all
+    @project = current_account.projects.find(params[:project_id])
+    @lessons = @project.lessons.all
     redirect_to project_lesson_path(@lessons, @project)
   end
 
@@ -30,6 +30,7 @@ class LessonsController < ApplicationController
   def show
     @project = current_account.projects.find(params[:project_id])
     @lesson = @project.lessons.find(params[:id])
+    @lessons = @project.lessons.all
       # @video = Wistia::Media.find(:all).elements[0].attributes[:hashed_id]
   end
 
@@ -53,7 +54,7 @@ class LessonsController < ApplicationController
     @project = current_account.projects.find(params[:project_id])
     @lesson = @project.lessons.find(params[:id])
     @lesson.destroy
-    redirect_to project_lessons_path, notice: "Lesson deleted"
+    redirect_to project_path(@project), notice: "Lesson deleted"
   end
 
   def update

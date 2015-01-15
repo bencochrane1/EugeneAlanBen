@@ -1,80 +1,130 @@
-* {
-  margin: 0;
-}
-html, body {
-  height: 100%;
-}
+* {margin:0;padding:0;} 
+
+html, body {height: 100%;}
+
 .page-wrap {
   min-height: 100%;
   /* equal to footer height */
-  margin-bottom: -142px; 
 }
+
 .page-wrap:after {
   content: "";
   display: block;
 }
-.site-footer, .page-wrap:after {
-  height: 142px; 
-}
-.site-footer {
+
+.navbar {
+  border-radius: 0 !important;
+  z-index: 99999;
 }
 
-.jumbotron-front-page {
-	text-align: center !important;	
-	padding: 260px;
-	height: 400px;
-	color: white;
-	background-repeat: none;
-	background-position: top center;
-	background-size: cover;
-}
-
-.jumbotron-front-page h1 {
-	font-weight: 900px;
-	font-size: 84px;
-	text-shadow: 0 2px rgba(255, 255, 255, 0.6);			
-}
-
-.school-background {
-	width: 100%;
-	z-index: 1;
-}
-
-.school-background-container {
-	height: 400px;
-	overflow: hidden;
-	position: relative;
+.navbar .navbar-brand {
+  position: relative;
+  top: -5px;
+  height: 60px;
+  line-height: 30px;
+  color: inherit;
 }
 
 .navbar.navbar, .navbar-default.navbar {
-	margin: 0;
+  margin: 0;
 }
 
-.project_box {
-	height: 150px;
-	padding: 25px;
-	background-color: #ffffff;
+.jumbotron body {
+  border-radius: 0 !important;  
+}
+
+.jumbotron-front-page {
+  text-align: center !important;  
+  padding: 260px;
+  height: 225px;
+  color: white;
+  background-repeat: none;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 0 !important;
+}
+
+.jumbotron-front-page h1 {
+  font-weight: 900px;
+  font-size: 84px;
+  text-transform: uppercase;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.2);      
+}
+
+.school-background {
+  width: 100%;
+  z-index: 1;
+}
+
+.panel-body {
+padding: 10px 15px 35px !important;
+}
+
+footer {
+  background-color: #f5f5f5;
+}
+
+/* Button patching */
+.btn-material-red {
+  background-color: #f44336;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+input.file.optional {
+  text-transform: uppercase; 
+  border-right: none; 
+  border-bottom: none; 
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); 
+  -webkit-transition: all 0.2s; 
+  transition: all 0.2s; 
+}
+
+input button {
+  background-color: red;
 }
 
 /* Offsets */
 .box-header {
-	margin-top: 8%;
+  margin-top: 8%;
 }
 
 .form-style {
-margin-top: 5%;
-}
-
-footer {
-	margin-top: 50px;
-	position: relative;
-	bottom: 0;
+  margin-top: 5%;
 }
 
 .placeholder {
-    background-color: grey;
+  background-color: #f5f5f5;
 }
 
 .lesson-left {
-    height: 500px;
+  height: 500px;
+}
+
+/* // File Upload */
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+/*// Course CSS */
+
+.course-path-header {
+  background-color: #f5f5f5;
+  padding-bottom: 12px;
 }

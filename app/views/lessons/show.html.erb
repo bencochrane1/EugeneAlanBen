@@ -1,32 +1,28 @@
 
 <div class="container form-style">
 	<div class="left-bar">
-	<ul>
+		<h4><%= @project.name %></h4>
 		<% @project.lessons.each do |lesson| %>
-				<li><%= lesson.name %></li>
+				<p><%= link_to lesson.name, project_lesson_path(@project, lesson) %></p>
+				<p><%= lesson.description %></p>
 		<% end %>
-	</ul>
+	
 	</div>
 
-	<div class="col-md-3">
-		<div class="container">
+	
+		<div class="right-bar">
 			<h1><%= @lesson.name %></h1>
-			<%= image_tag @lesson.logo %>
+			<!-- Video Goes Here -->
+			<div class="video-container"></div>
+			<!-- Video Ends Here -->
+			<%# image_tag @lesson.logo %>
 			<p class="lead"><%= @lesson.description %></p>
-			<td><%= link_to "Download PDF", @lesson.pdf_url, target: '_blank' %></td>
-			<%# button_to "Delete",  lesson, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{@lesson.name}?" %>
+			<td>
+				<%= link_to "Download PDF", @lesson.pdf_url, target: '_blank', class: "btn btn-info" %>
+				<%= link_to "Edit", edit_project_lesson_path, class: "btn btn-warning" %>			
+				<%= link_to "Delete", project_lesson_path(@project, @lesson), method: :delete, class: "btn btn-danger" %>
+			</td>
 		</div>
-
-
-		<div class="container">
-			<%= link_to "Edit", edit_project_lesson_path %>
-		</div>
-
-
-
-
-	</div>
-
 
 </div>
 

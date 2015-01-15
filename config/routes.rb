@@ -14,6 +14,7 @@ end
 
 Rails.application.routes.draw do
   get 'lessons/index'
+  # get '/projects/:project_id/lessons(.:format)', to: redirect('/projects/:project_id(.:format)')
 
   constraints(SubdomainPresent) do
     

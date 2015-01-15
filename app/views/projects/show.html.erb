@@ -1,22 +1,22 @@
 <div class="course-path-header">
   <div class="container">
     <div class="col-md-9">
-      <h2>Course for <%= @project.name %></h2>
+      <h3><%= @project.name %></h3>
     </div>
     <div class="col-md-3 course-new-button">
       <%= link_to 'New Lesson', new_project_lesson_path(@project), class: "btn btn-success pull-right right-button" %>
     </div>
   </div>
 </div>
+<%# link_to 'Hello', project_lessons_path(@project, @lessons) %>
+<%# @project.lessons.each do |lesson|  %>
+<!-- <h3><%# lesson.name %></h3> -->
+<%# end %>
 
 <div class="container form-style">
 
-  <% @project.lessons.each do |lesson|  %>
-  <h3><%= lesson.name %></h3>
-  <% end %>
-
   <div class="col-md-8 col-md-offset-2">
-    <h2>Lessons for <%= @project.name %></h2>
+    <h3><small> Lessons for <%= @project.name %> </small></h3>
 
     <div class="panel panel-default">
       <div class="panel-body">
@@ -30,14 +30,25 @@
           <tbody>
             <% @project.lessons.each do |lesson| %>
             <tr>
+              <!-- The Lesson Name and Link to the Lesson -->
               <td><%= link_to lesson.name, project_lesson_path(@project, lesson) %></td>
-              <td><%= lesson.description %></td>
+              <td><%= lesson.description %>
+              <!-- Edit and Delete buttons -->
+                <div class="pull-right">
+                  <%= link_to edit_project_lesson_path(@project, lesson), class: "icon-link" do %>
+                    <small><i class="glyphicon glyphicon-cog"></i></small>
+                  <% end %>
+                  <%= link_to project_lesson_path(@project, lesson), method: :delete do %>
+                    <small><i class="glyphicon glyphicon-trash"></i></small>
+                  <% end %>
+                </div>  
+              </td>
+
             </tr>
+
             <% end %>
           </tbody>
         </table>
-
-
 
       </div>
     </div>
