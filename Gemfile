@@ -9,8 +9,8 @@ gem 'simple_form'
 gem 'pry'
 
 gem 'wistia-api'
-gem 'multipart-post'
 gem 'wistia-uploader'
+gem 'faraday', '~> 0.9.1'
 
 gem 'carrierwave', '~> 0.9'
 
