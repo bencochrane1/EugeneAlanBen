@@ -9,8 +9,8 @@ gem 'simple_form'
 gem 'pry'
 
 gem 'wistia-api'
-gem 'multipart-post'
 gem 'wistia-uploader'
+gem 'faraday', '~> 0.9.1'
 
 gem 'carrierwave', '~> 0.9'
 
@@ -25,6 +25,7 @@ gem 'spring',        group: :development
 gem 'jquery-ui-rails'
 gem 'ranked-model'
 gem "tzinfo-data"
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 
 group :development, :test do

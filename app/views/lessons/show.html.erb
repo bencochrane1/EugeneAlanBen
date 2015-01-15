@@ -14,13 +14,16 @@
 			<%= image_tag @lesson.logo %>
 			<p class="lead"><%= @lesson.description %></p>
 			<td><%= link_to "Download PDF", @lesson.pdf_url, target: '_blank' %></td>
-
 			<%# button_to "Delete",  lesson, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{@lesson.name}?" %>
 		</div>
+
 
 		<div class="container">
 			<%= link_to "Edit", edit_project_lesson_path %>
 		</div>
+
+
+
 
 	</div>
 
