@@ -22,8 +22,7 @@ class LessonsController < ApplicationController
       redirect_to project_lessons_path, notice: "Lesson created"
     else
       render :new
-            redirect_to project_lesson_path, notice: "Lesson created"
-          end
+    end
   end
 
   def show
@@ -33,17 +32,17 @@ class LessonsController < ApplicationController
 
 
     def edit
-      @project = current_account.projects.find(params[:id])
+      @project = current_account.projects.find(params[:project_id])
       @lesson = @project.lessons.find(params[:id])    
     end
 
     def update
-       @project = current_account.projects.find(params[:id])
+       @project = current_account.projects.find(params[:project_id])
        @lesson = @project.lessons.find(params[:id]) 
        
         if @lesson.update(lesson_params)
           # binding.pry
-          post_video_to_wistia(params["lesson"]["video"].tempfile)
+          # post_video_to_wistia(params["lesson"]["video"].tempfile)
           redirect_to project_lesson_path, notice: "Lesson updated"
         else 
           render :edit
@@ -82,6 +81,7 @@ class LessonsController < ApplicationController
 private
 
 def lesson_params
-  params.require(:lesson).permit(:name, :video, :description, :pdf, :project_id)
+  params.require(:lesson).permit(:name, :video, :description, :pdf, :project_id, :logo)
 end
+
 end
