@@ -11,7 +11,7 @@
   <div class="navbar-header">
     <% if current_account %>
     <%= link_to image_tag(current_account.school_logo_attachments, border: 0), subdomain_root_path, class: "school-logo" %>
-    <%= link_to current_account.subdomain , root_path, class: "school-title" %>
+    <%= link_to current_account.subdomain.capitalize , root_path, class: "school-title" %>
     <% else %>
     <%= link_to 'Sensei', root_path, class: 'navbar-brand' %>
     <% end %>
