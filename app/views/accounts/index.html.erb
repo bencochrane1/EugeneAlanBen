@@ -4,7 +4,10 @@
 <% if user_signed_in? %>
 <div class="jumbotron jumbotron-front-page" style="background-image: url('<%= image_path(current_account.school_background_attachments) %>');">
   <div class="container front-page">
+  <% if current_account.school_logo_attachments == nil %>
+      <% else %>
     <%= image_tag current_account.school_logo_attachments, class: "school-logo school-logo-header" %>
+    <% end %>
   </div>
 </div>
 
@@ -18,10 +21,21 @@
 
     <div id="home-body">
       <span class="subdomain-title"><h1>Welcome to <%= current_account.subdomain %></h1></span>
+      <span class="lead">
+        <% if current_account.tagline == nil %>
+          <p class="lead">That's the joke<p>
+        <% else %>
+          <p class='lead'><%= current_account.tagline %></p>
+        <% end %>
+      </span>
 
       <div id="about">
         <h3> About the school </h3>
+        <% if current_account.description == nil %>
         <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam reprehenderit aliquam totam nobis provident harum fuga a animi non soluta reiciendis earum adipisci amet rem, repudiandae sequi, libero debitis dolor! Lorem ipsum dolor sit amet, consectetur adipisicing elit! </p>
+        <% else %>
+        <p class='lead'><%= current_account.description %></p>
+        <% end %>
       </div>
       <div id="courses">
 

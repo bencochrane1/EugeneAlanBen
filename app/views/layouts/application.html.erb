@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sensei</title>
+  <title>
+    <% if current_account %>
+      <%= current_account.subdomain %>
+    <% else %>
+       Sensei
+    <% end %>
+  </title>
   <%= stylesheet_link_tag 'application' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -12,7 +18,10 @@
     <nav class="navbar navbar-material-blue-800">
       <div class="navbar-header">
         <% if current_account %>
-        <%= link_to image_tag(current_account.school_logo_attachments, border: 0), subdomain_root_path, class: "school-logo" %>
+          <% if current_account.school_logo_attachments == nil %>
+          <% else %>
+          <%= link_to image_tag(current_account.school_logo_attachments, border: 0), subdomain_root_path, class: "school-logo" %>
+          <% end %>
         <%= link_to current_account.subdomain , root_path, class: 'navbar-brand' %>
         <% else %>
         <%= link_to 'Sensei', root_path, class: 'navbar-brand' %>
@@ -44,7 +53,6 @@
 
   <%= yield %>
 
-</div>
 
 <footer style="background-color: grey; height: 142px; margin-top: 5%;">
   <div class="container">
