@@ -1,23 +1,22 @@
 <h1>Hello</h1>
 
+<div class="container form-style">
+	<div class="col-md-3 placeholder lesson-left">
 
-<div class="col-md-3 placeholder lesson-left">
+	</div>
+
+	<div class="col-md-3">
+		<div class="container">
+			<li><%= @lesson.name %></li>
+			<li><%= @lesson.description %></li>
+			<td><%= link_to "Download Resume", @lesson.pdf, target: '_blank' %></td>
+			<%# button_to "Delete",  lesson, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{@lesson.name}?" %>
+		</div>
+
+		<div class="container">
+			<%= link_to "Edit", edit_project_lesson_path %>
+		</div>
+
+	</div>
 
 </div>
-
-
-
-
-<div class="col-md-3">
-    <div class="container">
-        <li><%= @lesson.name %></li>
-        <li><%= @lesson.description %></li>
-        
-    </div>
-
-    <div class="container">
-        <%= link_to "Edit", edit_project_lesson_path %>
-    </div>
-    
-</div>
-

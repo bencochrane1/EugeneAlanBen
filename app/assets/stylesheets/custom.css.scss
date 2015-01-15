@@ -60,13 +60,19 @@ html, body {
   z-index: 1;
 }
 
+/* Button patching */
+.btn-material-red {
+  background-color: #f44336;
+  color: rgba(255, 255, 255, 0.84);
+}
+
 /* Offsets */
 .box-header {
   margin-top: 8%;
 }
 
 .form-style {
-  margin-top: 5%;
+  margin-top: 15%;
 }
 
 .placeholder {
