@@ -31,7 +31,7 @@ RSpec.configure do |config|
 
   config.after(:each) do
     DatabaseCleaner.clean
-    Apartment::Database.reset
+    Apartment::Tenant.reset
     drop_schemas
     Capybara.app_host = 'http://example.com'
     reset_mailer
