@@ -1,4 +1,3 @@
-<h1>Hello</h1>
 
 
 <div class="col-md-3 placeholder lesson-left">
@@ -10,8 +9,10 @@
 
 <div class="col-md-3">
     <div class="container">
-        <li><%= @lesson.name %></li>
+        <h1><%= @lesson.name %></h1>
         <li><%= @lesson.description %></li>
+        <li><%= image_tag @lesson.logo %></li>
+
         
     </div>
 

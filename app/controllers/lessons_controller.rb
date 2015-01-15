@@ -4,8 +4,7 @@ require 'net/http/post/multipart'
 
 class LessonsController < ApplicationController
   def index
-    @projects = current_project.all
-    @lessons = @projects.lesson.all
+    @lessons = current_project.lessons.all
     redirect_to project_lesson_path(@project, lesson)
   end
 
@@ -19,31 +18,31 @@ class LessonsController < ApplicationController
   def create 
     @lesson = current_project.lessons.create(lesson_params)
     if @lesson.save
-            redirect_to project_lesson_path, notice: "Lesson created"
+            redirect_to current_project, notice: "Lesson created"
         else
             render :new
         end
   end
 
     def show
-      @project = current_account.projects.find(params[:id])
+      @project = current_account.projects.find(params[:project_id])
       @lesson = @project.lessons.find(params[:id])
       # Wistia::Media.find(:all)
     end
 
     def edit
       
-      @project = current_account.projects.find(params[:id])
+      @project = current_account.projects.find(params[:project_id])
       @lesson = @project.lessons.find(params[:id])    
     end
 
     def update
-       @project = current_account.projects.find(params[:id])
+       @project = current_account.projects.find(params[:project_id])
        @lesson = @project.lessons.find(params[:id]) 
        
         if @lesson.update(lesson_params)
           # binding.pry
-          post_video_to_wistia(params["lesson"]["video"].tempfile)
+          # post_video_to_wistia(params["lesson"]["video"].tempfile)
           redirect_to project_lesson_path, notice: "Lesson updated"
         else 
           render :edit
@@ -84,6 +83,6 @@ end
 
   def lesson_params
 
-    params.require(:lesson).permit(:name, :description, :pdf, :project_id)
+    params.require(:lesson).permit(:name, :description, :pdf, :project_id, :logo)
   end
 end
