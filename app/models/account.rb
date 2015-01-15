@@ -16,6 +16,7 @@ class Account < ActiveRecord::Base
     before_validation :downcase_subdomain
 
     mount_uploader :school_logo_attachments, SchoolLogoAttachmentsUploader
+    mount_uploader :school_background_attachments, SchoolBackgroundAttachmentsUploader
 
     private
 

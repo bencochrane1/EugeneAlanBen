@@ -2,9 +2,9 @@
 
 
 <% if user_signed_in? %>
-<div class="jumbotron jumbotron-front-page" style="background-image: url('<%= image_path(current_account.school_logo_attachments) %>');">
+<div class="jumbotron jumbotron-front-page" style="background-image: url('<%= image_path(current_account.school_background_attachments) %>');">
   <div class="container front-page">
-    <h1><%= current_account.subdomain %></h1>
+    <%= image_tag current_account.school_logo_attachments, class: "school-logo school-logo-header" %>
   </div>
 </div>
 
@@ -17,28 +17,27 @@
   <div class="row">
 
     <div id="home-body">
+      <span class="subdomain-title"><h1>Welcome to <%= current_account.subdomain %></h1></span>
+
       <div id="about">
-        <h1> About the school </h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam reprehenderit aliquam totam nobis provident harum fuga a animi non soluta reiciendis earum adipisci amet rem, repudiandae sequi, libero debitis dolor! Lorem ipsum dolor sit amet, consectetur adipisicing elit! </p>
+        <h3> About the school </h3>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam reprehenderit aliquam totam nobis provident harum fuga a animi non soluta reiciendis earum adipisci amet rem, repudiandae sequi, libero debitis dolor! Lorem ipsum dolor sit amet, consectetur adipisicing elit! </p>
       </div>
       <div id="courses">
-        <h1>The courses</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam reprehenderit aliquam totam nobis provident harum fuga a animi non soluta reiciendis earum adipisci amet rem, repudiandae sequi, libero debitis dolor!Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-        </p>
+
       </div>
     </div>
   </div>
 
   <div class="row">
+    <h3>The courses</h3>
     <% current_account.projects.each do |project| %>
-
     <div class="col-md-6">
-      <div class="project_box">
-        <%= project.name %>
+      <div class="project_box panel panel-default">
+        <%= link_to project.name, project_path(project) %>
         <%= project.subtitle %>
       </div>
     </div>
-
     <% end %>
   </div>
 

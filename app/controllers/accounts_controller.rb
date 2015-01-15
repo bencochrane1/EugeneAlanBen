@@ -12,8 +12,8 @@ class AccountsController < ApplicationController
   def create
     @account = Account.new(account_params)
     if @account.valid?
-        Apartment::Database.create(@account.subdomain)
-        Apartment::Database.switch(@account.subdomain)
+        Apartment::Tenant.create(@account.subdomain)
+        Apartment::Tenant.switch(@account.subdomain)
         @account.save
         redirect_to new_user_session_url(subdomain: @account.subdomain)
     else
@@ -48,7 +48,7 @@ class AccountsController < ApplicationController
   private
   
   def account_params
-    params.require(:account).permit(:subdomain, :tagline, :description, :school_logo_attachments, owner_attributes: [:name, :email, :password, :password_confirmation])
+    params.require(:account).permit(:subdomain, :tagline, :description, :school_logo_attachments, :school_background_attachments, owner_attributes: [:name, :email, :password, :password_confirmation])
       
   end
 

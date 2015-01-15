@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -142px; 
+}
+
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+.navbar {
+  border-radius: 0 !important;
+}
+
+.navbar .navbar-brand {
+  position: relative;
+  top: -5px;
+  height: 60px;
+  line-height: 30px;
+  color: inherit;
+}
+
+.navbar.navbar, .navbar-default.navbar {
+  margin: 0;
+}
+
+.jumbotron body {
+  border-radius: 0 !important;  
+}
+
+.jumbotron-front-page {
+  text-align: center !important;  
+  padding: 260px;
+  height: 400px;
+  color: white;
+  background-repeat: none;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 0 !important;
+}
+
+.jumbotron-front-page h1 {
+  font-weight: 900px;
+  font-size: 84px;
+  text-transform: uppercase;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.2);      
+}
+
+.school-background {
+  width: 100%;
+  z-index: 1;
+}
+
+/* Offsets */
+.box-header {
+  margin-top: 8%;
+}
+
+.form-style {
+  margin-top: 5%;
+}
+
+.placeholder {
+  background-color: grey;
+}
+
+.lesson-left {
+  height: 500px;
+}
