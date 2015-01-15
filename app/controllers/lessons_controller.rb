@@ -84,3 +84,4 @@ def lesson_params
   params.require(:lesson).permit(:name, :video, :description, :pdf, :project_id, :logo)
 end
 
+end
