@@ -8,7 +8,7 @@
 		<div class="container">
 			<li><%= @lesson.name %></li>
 			<li><%= @lesson.description %></li>
-			<td><%= link_to "Download PDF", @lesson.pdf, target: '_blank' %></td>
+			<td><%= link_to "Download PDF", @lesson.pdf_url, target: '_blank' %></td>
 			  <li><%= image_tag @lesson.logo %></li>
 
 			<%# button_to "Delete",  lesson, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{@lesson.name}?" %>
@@ -22,42 +22,7 @@
 <p>http://fast.wistia.net/embed/iframe/<%= @video %></p>
 
 
-<%= raw Wistia::Media.find(:all)[-1].attributes["embedCode"] %>
 
-
-
-
-
-
-<!-- <div id="wistia_h2nxvm3dty" class="wistia_embed" style="width:640px;height:400px;">&nbsp;</div>
-<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js"></script>
-<script>
-wistiaEmbed = Wistia.embed("h2nxvm3dty");
-</script>
- -->
-
-<!-- <iframe src="//fast.wistia.net/embed/iframe/h2nxvm3dty" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="640" height="400"></iframe> -->
-<!-- 
-<div id="other_element" style="background:green;color:#fff;width:45%;">other element</div>
-<div id="wistia_<#%== @video %>_3" class="wistia_embed" style="width:640px;height:360px;"> </div>
-<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js"></script>
-<script>
-wistiaEmbed = Wistia.embed("<#%== @video %>", {
-  container: "wistia_<%#== @video %>_3"
-});
-function matchWidthToOtherElement() {
-  wistiaEmbed.hasData(function() {
-    wistiaEmbed.width($("#other_element").width(), {
-      constrain: true /* constrain option preserves the video's aspect ratio */
-    });
-  });
-}
-$(window).resize(matchWidthToOtherElement);
-matchWidthToOtherElement();
-</script>
- -->
->>>>>>> add in wistia gem to allow viewing of videos dynamially
 
 	</div>
 

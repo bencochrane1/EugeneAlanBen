@@ -28,16 +28,10 @@ class LessonsController < ApplicationController
     end
   end
 
-  def show
-    @project = current_account.projects.find(params[:project_id])
-    @lesson = @project.lessons.find(params[:id])
-  end
-
-
     def show
-      @project = current_account.projects.find(params[:id])
+      @project = current_account.projects.find(params[:project_id])
       @lesson = @project.lessons.find(params[:id])
-      @video = Wistia::Media.find(:all).elements[0].attributes[:hashed_id]
+      # @video = Wistia::Media.find(:all).elements[0].attributes[:hashed_id]
     end
 
 
@@ -83,5 +77,6 @@ def lesson_params
   params.require(:lesson).permit(:name, :video, :description, :pdf, :project_id, :logo)
 end
 
+end
 end
 
