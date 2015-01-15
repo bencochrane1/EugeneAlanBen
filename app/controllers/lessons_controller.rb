@@ -21,6 +21,9 @@ class LessonsController < ApplicationController
     @project = current_account.projects.find(params[:project_id])    
     @lesson = current_project.lessons.create(lesson_params)
     if @lesson.save
+      binding.pry
+      
+      post_video_to_wistia(params["lesson"]["video"].tempfile)
       redirect_to project_lesson_path(@project, @lesson), notice: "Lesson created"
     else
       render :new
