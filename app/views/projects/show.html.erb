@@ -1,39 +1,46 @@
-<div class="container form-style"><h1><%= @project.name %></h1>
+<div class="course-path-header">
+  <div class="container">
+    <div class="col-md-9">
+      <h2>Course for <%= @project.name %></h2>
+    </div>
+    <div class="col-md-3 course-new-button">
+      <%= link_to 'New Lesson', new_project_lesson_path(@project), class: "btn btn-success pull-right right-button" %>
+    </div>
+  </div>
+</div>
 
+<div class="container form-style">
 
-<% @project.lessons.each do |lesson|  %>
-<%= lesson.name %>
-<% end %>
-<%= link_to 'New Lesson', new_project_lesson_path(@project)%>
+  <% @project.lessons.each do |lesson|  %>
+  <h3><%= lesson.name %></h3>
+  <% end %>
 
+  <div class="col-md-8 col-md-offset-2">
+    <h2>Lessons for <%= @project.name %></h2>
 
-
-<div class="col-md-8 col-md-offset-2">
-  <h2>Lessons for <%= @project.name %></h2>
-
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @project.lessons.each do |lesson| %>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @project.lessons.each do |lesson| %>
             <tr>
               <td><%= link_to lesson.name, project_lesson_path(@project, lesson) %></td>
               <td><%= lesson.description %></td>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
+            <% end %>
+          </tbody>
+        </table>
 
 
 
+      </div>
     </div>
   </div>
-</div>
 
 </div>

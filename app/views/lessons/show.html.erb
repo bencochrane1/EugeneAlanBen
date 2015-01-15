@@ -1,15 +1,19 @@
 
 <div class="container form-style">
-	<div class="col-md-3 placeholder lesson-left">
-
+	<div class="left-bar">
+	<ul>
+		<% @project.lessons.each do |lesson| %>
+				<li><%= lesson.name %></li>
+		<% end %>
+	</ul>
 	</div>
 
 	<div class="col-md-3">
 		<div class="container">
-			<li><%= @lesson.name %></li>
-			<li><%= @lesson.description %></li>
-			<td><%= link_to "Download PDF", @lesson.pdf, target: '_blank' %></td>
-			  <li><%= image_tag @lesson.logo %></li>
+			<h1><%= @lesson.name %></h1>
+			<%= image_tag @lesson.logo %>
+			<p class="lead"><%= @lesson.description %></p>
+			<td><%= link_to "Download PDF", @lesson.pdf_url, target: '_blank' %></td>
 
 			<%# button_to "Delete",  lesson, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{@lesson.name}?" %>
 		</div>
