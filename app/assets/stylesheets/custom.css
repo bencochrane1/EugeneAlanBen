@@ -12,7 +12,6 @@ a:hover {
 }
 
 .page-wrap {
-  
   /* equal to footer height */
 }
 
@@ -21,6 +20,7 @@ a:hover {
   display: block;
 }
 */
+
 .navbar {
   border-radius: 0 !important;
   z-index: 99999;
@@ -39,20 +39,14 @@ a:hover {
 }
 
 .front-page-sensei {
- background: rgba(255,61,61,1);
-background: -moz-linear-gradient(-45deg, rgba(255,61,61,1) 0%, rgba(10,124,255,1) 100%);
-background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,61,61,1)), color-stop(100%, rgba(10,124,255,1)));
-background: -webkit-linear-gradient(-45deg, rgba(255,61,61,1) 0%, rgba(10,124,255,1) 100%);
-background: -o-linear-gradient(-45deg, rgba(255,61,61,1) 0%, rgba(10,124,255,1) 100%);
-background: -ms-linear-gradient(-45deg, rgba(255,61,61,1) 0%, rgba(10,124,255,1) 100%);
-background: linear-gradient(135deg, rgba(255,61,61,1) 0%, rgba(10,124,255,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3d3d', endColorstr='#0a7cff', GradientType=1 );
-  background-size: cover;
-  background-position: center center;
-  min-height: 900px;
-  max-height: 900px
-  /*margin: 0 auto 45px;*/
-  /*padding-bottom: 30px;*/
+
+ background-image: url('background-chalk.jpg');
+ background-size: cover;
+ background-position: center center;
+ min-height: 900px;
+ max-height: 900px
+
+
 }
 
 .jumbotron body {

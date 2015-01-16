@@ -1,16 +1,25 @@
 * {margin:0;padding:0;} 
 
-html, body {height: 100%;}
+html, body {
+  min-height: 100%;
+  height: 100%;
+  padding-bottom: 60px;
+  background-color: #f5f5f5;
+}
+
+a:hover {
+  text-decoration: none;
+}
 
 .page-wrap {
-  min-height: 100%;
   /* equal to footer height */
 }
 
-.page-wrap:after {
+/*.page-wrap:after {
   content: "";
   display: block;
 }
+*/
 
 .navbar {
   border-radius: 0 !important;
@@ -27,6 +36,17 @@ html, body {height: 100%;}
 
 .navbar.navbar, .navbar-default.navbar {
   margin: 0;
+}
+
+.front-page-sensei {
+
+ background-image: url('background-chalk.jpg');
+ background-size: cover;
+ background-position: center center;
+ min-height: 900px;
+ max-height: 900px
+
+
 }
 
 .jumbotron body {
@@ -56,6 +76,10 @@ html, body {height: 100%;}
   z-index: 1;
 }
 
+.panel-body {
+  padding: 10px 15px 35px !important;
+}
+
 footer {
   background-color: #f5f5f5;
 }
@@ -75,13 +99,13 @@ input.file.optional {
   transition: all 0.2s; 
 }
 
-input button {
-  background-color: red;
+.fixed-front-fronter {  
+  padding-bottom: 55px !important;
 }
 
 /* Offsets */
 .box-header {
-  margin-top: 8%;
+  margin-top: 15%;
 }
 
 .form-style {
@@ -92,9 +116,58 @@ input button {
   background-color: #f5f5f5;
 }
 
-// Course CSS 
+.lesson-left {
+  height: 100%;
+}
+
+/* // File Upload */
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 60%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+div.btn.btn-file > div > label {
+  position: relative;
+  top: 2px;
+  color: #fff;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.file-btn-edit {
+  height: 40px;
+}
+
+.btn .btn-primary {
+  font-weight: 400;
+}
+
+/*// Course CSS */
 
 .course-path-header {
   background-color: #f5f5f5;
   padding-bottom: 12px;
+}
+
+/* Footer */
+
+p.muted.credit {
+  margin: 55px auto;
+  font-size: 16px;
 }
