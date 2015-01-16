@@ -20,10 +20,10 @@ class LessonsController < ApplicationController
   def create 
     @project = current_account.projects.find(params[:project_id])    
     @lesson = current_project.lessons.create(lesson_params)
-    if @lesson.save
-      binding.pry
+    if @lesson.valid?
+      @lesson.wistia_video = post_video_to_wistia(params["lesson"]["video"].tempfile)
+      @lesson.save
       
-      post_video_to_wistia(params["lesson"]["video"].tempfile)
       redirect_to project_lesson_path(@project, @lesson), notice: "Lesson created"
     else
       render :new
@@ -34,7 +34,8 @@ class LessonsController < ApplicationController
     @project = current_account.projects.find(params[:project_id])
     @lesson = @project.lessons.find(params[:id])
     @lessons = @project.lessons.all
-      # @video = Wistia::Media.find(:all).elements[0].attributes[:hashed_id]
+    @video = Wistia::Media.find(@lesson.wistia_video).attributes["embedCode"]
+      # binding.pry
   end
 
   def edit
@@ -51,6 +52,7 @@ class LessonsController < ApplicationController
       else 
         render :edit
       end
+
   end
 
   def destroy
@@ -70,26 +72,27 @@ class LessonsController < ApplicationController
       end
   end
 
-  def post_video_to_wistia(path_to_video)
+  def post_video_to_wistia(video_file)
 
+    # binding.pry
     conn = Faraday.new(:url => 'https://upload.wistia.com/') do |conn|
       conn.request :multipart
       conn.request :url_encoded
       conn.adapter :net_http
-      conn.on_success
     end
 
-    conn.post '/', {
-      api_password: WISTIA_API_PASSWORD,
-      file: Faraday::UploadIO.new(path_to_video.path, 'application/octet-stream')
+    response = conn.post '/', {
+      api_password: ENV['WISTIA_API_PASSWORD'],
+      file: Faraday::UploadIO.new(video_file.path, 'application/octet-stream')
     }
 
+    return JSON.parse(response.body)["hashed_id"]
   end
 
   private
 
     def lesson_params
-      params.require(:lesson).permit(:name, :video, :description, :pdf, :project_id, :logo)
+      params.require(:lesson).permit(:name, :wistia_video, :description, :pdf, :project_id, :logo)
     end
 
 end
