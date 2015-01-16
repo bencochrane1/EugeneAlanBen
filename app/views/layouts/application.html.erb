@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sensei</title>
+  <title>
+    <% if current_account %>
+      <%= current_account.subdomain %>
+    <% else %>
+       Sensei
+    <% end %>
+  </title>
   <%= stylesheet_link_tag 'application' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
  <nav class="navbar navbar-material-custom-grey">
   <div class="navbar-header">
     <% if current_account %>
@@ -42,19 +49,14 @@
 
 <div class="page-wrap">
 
- <%= yield %>
+  <%= yield %>
 
-</div>
-
-
-
-
+    </div>
 
 <footer style="background-color: #f5f5f5; height: 142px;">
   <div class="container">
     <p class="muted credit">
       2015 &copy; Ben Cochrane | Eugene Lai | Alan Ng 
-    </div>
   </div>
 </footer>
 
