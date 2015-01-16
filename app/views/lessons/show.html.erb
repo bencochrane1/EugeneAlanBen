@@ -13,7 +13,10 @@
 		<div class="right-bar">
 			<h1><%= @lesson.name %></h1>
 			<!-- Video Goes Here -->
-			<div class="video-container"></div>
+			<div class="video-container">
+				<%= raw @video %>
+				<%#= raw Wistia::Media.find(:all)[-1].attributes["embedCode"] %>
+			</div>
 			<!-- Video Ends Here -->
 			<%# image_tag @lesson.logo %>
 			<p class="lead"><%= @lesson.description %></p>
