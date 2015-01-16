@@ -13,51 +13,50 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-  <div class="page-wrap">
-    <nav class="navbar navbar-material-blue-800">
-      <div class="navbar-header">
-        <% if current_account %>
-          <% if current_account.school_logo_attachments == nil %>
-          <% else %>
-          <%= link_to image_tag(current_account.school_logo_attachments, border: 0), subdomain_root_path, class: "school-logo" %>
-          <% end %>
-        <%= link_to current_account.subdomain , root_path, class: 'navbar-brand' %>
-        <% else %>
-        <%= link_to 'Sensei', root_path, class: 'navbar-brand' %>
-        <% end %>
-      </div>
 
-      <div class="pull-right right-button">
-        <% if user_signed_in? %>
-        <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', class: 'btn btn-default navbar-btn' %>
-      </div>
+ <nav class="navbar navbar-material-custom-grey">
+  <div class="navbar-header">
+    <% if current_account %>
+      <%= link_to image_tag(current_account.school_logo_attachments, border: 0), subdomain_root_path, class: "school-logo" %>
+      <%= link_to current_account.subdomain.capitalize , root_path, class: "school-title" %>
+    <% else %>
+      <%= link_to 'Sensei', root_path, class: 'navbar-brand' %>
+    <% end %>
+  </div>
 
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'My Courses', projects_path %></li> 
-        <li><%= link_to 'New Course', new_project_path %></li>               
-        <li><%= link_to 'Users', users_path %></li>
-        <%# binding.pry %>
-        <li><%= link_to 'School Settings', edit_account_path(current_account) %></li>
-      </ul>
+  <div class="pull-right right-button">
+  <% if user_signed_in? %>
+    <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', class: 'btn btn-default navbar-btn' %>
+  </div>
 
-      <div class="pull-right right-button">
-        <% elsif !user_signed_in? && current_account%>
-        <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-default navbar-btn' %>
-      </div>
-      <% end %>
-      </div>
-    </nav>
+  <ul class="nav navbar-nav navbar-right">
+  <li><%= link_to '+ New Course', new_project_path %></li>                 
+    <li><%= link_to 'My Courses', projects_path %></li> 
+    <li><%= link_to 'Users', users_path %></li>
+    <%# binding.pry %>
+    <li><%= link_to 'School Settings', edit_account_path(current_account) %></li>
+  </ul>
 
-  </header>
+  <div class="pull-right right-button">
+  <% elsif !user_signed_in? && current_account %>
+      <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-default navbar-btn' %>
+  <% else %>    
+      <%= render link_to 'Sign Up', new_user_registration_path, class: 'btn btn-success navbar-btn' if !subdomain_root_path %>
+  </div>
+  <% end %>
+</div>
+</nav>
+
+<div class="page-wrap">
 
   <%= yield %>
 
-
-<footer style="background-color: #f5f5f5; height: 142px; margin-top: 5%;">
-  <div class="container">
-    <div class="row">
     </div>
+
+<footer style="background-color: #f5f5f5; height: 142px;">
+  <div class="container">
+    <p class="muted credit">
+      2015 &copy; Ben Cochrane | Eugene Lai | Alan Ng 
   </div>
 </footer>
 

@@ -18,8 +18,9 @@ class LessonsController < ApplicationController
   end
 
   def create 
-    @project = current_account.projects.find(params[:project_id])    
-    @lesson = current_project.lessons.create(lesson_params)
+    @project = current_account.projects.find(params[:project_id])  
+    # binding.pry  
+    @lesson = @project.lessons.create(lesson_params)
     if @lesson.valid?
       @lesson.wistia_video = post_video_to_wistia(params["lesson"]["video"].tempfile)
       @lesson.save

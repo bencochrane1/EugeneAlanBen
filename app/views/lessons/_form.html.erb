@@ -6,10 +6,10 @@ wrapper_mappings: { boolean: :vertical_boolean }, input_html: {multipart: true})
 <%= f.input :name %>
 
 <%= f.input :description %>
-<div class="btn btn-default btn-file">
+<div class="btn btn-info btn-file file-btn-edit">
 	<%= f.input :pdf, as: :file %>
 </div>
-<div class="btn btn-default btn-file">
+<div class="btn btn-warning btn-file file-btn-edit">
 	<%= f.input :video, as: :file %>
 </div>
 <%# f.input :logo %>

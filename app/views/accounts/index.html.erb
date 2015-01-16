@@ -1,7 +1,6 @@
 <%= stylesheet_link_tag 'accounts' %>
 
 
-<% if user_signed_in? %>
 <div class="jumbotron jumbotron-front-page" style="background-image: url('<%= image_path(current_account.school_background_attachments) %>');">
   <div class="container front-page">
   <% if current_account.school_logo_attachments == nil %>
@@ -38,9 +37,7 @@
         <% end %>
 
       </div>
-      <div id="courses">
 
-      </div>
     </div>
   </div>
 
@@ -49,15 +46,23 @@
     <% current_account.projects.each do |project| %>
     <div class="col-md-6">
       <div class="project_box panel panel-default">
+      <% if user_signed_in? %>
         <%= link_to project.name, project_path(project) %>
+        <% else %>
+        <%= project.name %>
+        <% end %>
         <%= project.subtitle %>
+
+        <% if current_account.projects.count == 0 %>
+          <%= link_to 'New Course', new_project_path, class: "btn btn-primary" %>
+        <% end %>
+
       </div>
     </div>
     <% end %>
   </div>
 
 
-  <!-- <p><%= image_tag current_account.school_logo_attachments %></p> -->
+  <!-- <p><%# image_tag current_account.school_logo_attachments %></p> -->
 
-  <% end %> 
 
