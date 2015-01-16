@@ -2,8 +2,11 @@
 
   <%= f.input :tagline %>
   <%= f.input :description %>
+  <div class="btn btn-info btn-file file-btn-edit">
   <%= f.input :school_logo_attachments %>
+  </div>
+  <div class="btn btn-warning btn-file file-btn-edit">
   <%= f.input :school_background_attachments %>
-  
+  </div>
   <%= f.button :submit, class: 'btn-primary' %>
 <% end %>

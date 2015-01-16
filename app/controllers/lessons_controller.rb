@@ -18,7 +18,8 @@ class LessonsController < ApplicationController
   end
 
   def create 
-    @project = current_account.projects.find(params[:project_id])    
+    @project = current_account.projects.find(params[:project_id])  
+    # binding.pry  
     @lesson = current_project.lessons.create(lesson_params)
     if @lesson.save
       redirect_to project_lesson_path(@project, @lesson), notice: "Lesson created"
