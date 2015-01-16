@@ -30,7 +30,7 @@
 
 .left-bar {
 	height: 100%;
-	width: 350px;
+	width: 300px;
 	padding: 100px 35px;
 	position: fixed;
 	left: 0;
@@ -48,7 +48,7 @@
 .right-bar {
 	position: absolute;
 	float: right;
-	left: 350px;
+	left: 300px;
 	top: 80px;
 	padding: 0 40px;
 }
@@ -61,5 +61,8 @@
 
 .comments {
 	width: 520px;
+}
 
+#comments {
+	padding-top: 50px;
 }
