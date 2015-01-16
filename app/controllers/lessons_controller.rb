@@ -1,6 +1,4 @@
-
 require 'net/http'
-# require 'net/http/post/multipart'
 
 class LessonsController < ApplicationController
 
@@ -17,16 +15,15 @@ class LessonsController < ApplicationController
     @lesson = current_project.lessons.build
   end
 
-  def create 
-    @project = current_account.projects.find(params[:project_id])  
-    # binding.pry  
+  def create
+    @project = current_account.projects.find(params[:project_id])
+    # binding.pry
     @lesson = @project.lessons.create(lesson_params)
     if @lesson.valid?
-      
+
       @lesson.wistia_video = post_video_to_wistia(params["lesson"]["video"].tempfile)
       @lesson.save
-      binding.pry
-      
+
       redirect_to project_lesson_path(@project, @lesson), notice: "Lesson created"
     else
       render :new
@@ -37,24 +34,24 @@ class LessonsController < ApplicationController
     @project = current_account.projects.find(params[:project_id])
     @lesson = @project.lessons.find(params[:id])
     # @lessons = @project.lessons.all
-    
+
     @video = Wistia::Media.find(@lesson.wistia_video).attributes["embedCode"]
-      # binding.pry
+    # binding.pry
   end
 
   def edit
     @project = current_account.projects.find(params[:project_id])
-    @lesson = @project.lessons.find(params[:id])    
+    @lesson = @project.lessons.find(params[:id])
   end
 
   def update
-     @project = current_account.projects.find(params[:project_id])
-     @lesson = @project.lessons.find(params[:id]) 
-     
+    @project = current_account.projects.find(params[:project_id])
+    @lesson = @project.lessons.find(params[:id])
+
     if @lesson.update(lesson_params)
       @lesson.wistia_video = post_video_to_wistia(params["lesson"]["video"].tempfile)
       @lesson.save
-      
+
       redirect_to project_lesson_path, notice: "Lesson updated"
     else
       render :edit
@@ -63,7 +60,7 @@ class LessonsController < ApplicationController
 
     # if @lesson.update(lesson_params)
     #   redirect_to project_lesson_path, notice: "Lesson updated"
-    # else 
+    # else
     #   render :edit
     # end
 
@@ -77,13 +74,13 @@ class LessonsController < ApplicationController
   end
 
   def update
-   @project = current_account.projects.find(params[:project_id])
-   @lesson = @project.lessons.find(params[:id])
-   if @lesson.update(lesson_params)
-        redirect_to project_lesson_path, notice: "Lesson updated"
-      else
-        render :edit
-      end
+    @project = current_account.projects.find(params[:project_id])
+    @lesson = @project.lessons.find(params[:id])
+    if @lesson.update(lesson_params)
+      redirect_to project_lesson_path, notice: "Lesson updated"
+    else
+      render :edit
+    end
   end
 
   def post_video_to_wistia(video_file)
@@ -105,8 +102,8 @@ class LessonsController < ApplicationController
 
   private
 
-    def lesson_params
-      params.require(:lesson).permit(:name, :wistia_video, :description, :pdf, :project_id, :logo)
-    end
+  def lesson_params
+    params.require(:lesson).permit(:name, :wistia_video, :description, :pdf, :project_id, :logo)
+  end
 
 end

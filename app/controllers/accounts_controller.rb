@@ -1,6 +1,5 @@
 class AccountsController < ApplicationController
 
-  # skip_before_filter :authenticate_user!, only: [:new, :create]
   skip_before_filter :authenticate_user!, only: [:index, :new, :create, :show]
 
 
@@ -23,7 +22,6 @@ class AccountsController < ApplicationController
 
   def index
     @accounts = Account.all
-    # @account = Account.where(@account.subdomain)
   end
 
   def edit
@@ -35,7 +33,6 @@ class AccountsController < ApplicationController
   end
 
   def update
-     # @account = Account.find(params[:id])
      @account = current_account
      
       if @account.update(account_params)
