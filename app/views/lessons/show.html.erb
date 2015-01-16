@@ -1,13 +1,16 @@
 
-<div class="container form-style">
-	<div class="left-bar">
-		<h4><%= @project.name %></h4>
-		<% @project.lessons.each do |lesson| %>
-				<p><%= link_to lesson.name, project_lesson_path(@project, lesson) %></p>
-				<p><%= lesson.description %></p>
-		<% end %>
-	
-	</div>
+<div class="form-style">
+	<div class="container">
+
+		<div class="left-bar-wrap">
+			<div class="left-bar">
+				<h4><%= @project.name %></h4>
+				<% @project.lessons.each do |lesson| %>
+						<p><%= link_to lesson.name, project_lesson_path(@project, lesson) %></p>
+						<p><%= lesson.description %></p>
+				<% end %>
+				</div>
+		</div>
 
 	
 		<div class="right-bar">
@@ -20,41 +23,42 @@
 			<!-- Video Ends Here -->
 			<%# image_tag @lesson.logo %>
 			<p class="lead"><%= @lesson.description %></p>
-			<td>
+			<div class="lesson-controls">
 				<%= link_to "Download PDF", @lesson.pdf_url, target: '_blank', class: "btn btn-info" %>
 				<%= link_to "Edit", edit_project_lesson_path, class: "btn btn-warning" %>			
 				<%= link_to "Delete", project_lesson_path(@project, @lesson), method: :delete, class: "btn btn-danger" %>
-			</td>
+			</div>
 			<div id="comments">
-   <div id="disqus_thread"></div>
-       <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'sensei'; // required: replace example with your forum shortname
+		   <div id="disqus_thread"></div>
+	       <script type="text/javascript">
+		    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+		    var disqus_shortname = 'sensei'; // required: replace example with your forum shortname
 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-    </script>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'sensei'; // required: replace example with your forum shortname
+		    /* * * DON'T EDIT BELOW THIS LINE * * */
+		    (function () {
+		        var s = document.createElement('script'); s.async = true;
+		        s.type = 'text/javascript';
+		        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+		        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+		    }());
+		    </script>
+		    <script type="text/javascript">
+		        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+		        var disqus_shortname = 'sensei'; // required: replace example with your forum shortname
 
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		        /* * * DON'T EDIT BELOW THIS LINE * * */
+		        (function() {
+		            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		        })();
+		    </script>
+		    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
 </div>
 
-		</div>
+		
 
-</div>
+
 
       
