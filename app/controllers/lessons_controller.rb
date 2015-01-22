@@ -19,11 +19,14 @@ class LessonsController < ApplicationController
     @project = current_account.projects.find(params[:project_id])
     # binding.pry
     @lesson = @project.lessons.create(lesson_params)
-    if @lesson.valid?
+    if @lesson.valid? && (params["lesson"]["video"] != nil)
 
       @lesson.wistia_video = post_video_to_wistia(params["lesson"]["video"].tempfile)
       @lesson.save
 
+      redirect_to project_lesson_path(@project, @lesson), notice: "Lesson created"
+    elsif @lesson.valid?
+      @lesson.save
       redirect_to project_lesson_path(@project, @lesson), notice: "Lesson created"
     else
       render :new
@@ -34,8 +37,9 @@ class LessonsController < ApplicationController
     @project = current_account.projects.find(params[:project_id])
     @lesson = @project.lessons.find(params[:id])
     # @lessons = @project.lessons.all
-
-    @video = Wistia::Media.find(@lesson.wistia_video).attributes["embedCode"]
+    if @lesson.wistia_video != nil
+      @video = Wistia::Media.find(@lesson.wistia_video).attributes["embedCode"]
+    end
     # binding.pry
   end
 

@@ -33,20 +33,20 @@ class AccountsController < ApplicationController
   end
 
   def update
-     @account = current_account
+    @account = current_account
      
-      if @account.update(account_params)
-          redirect_to subdomain_root_path, notice: "Your school has been updated"
-      else 
-          render :edit
-      end
+    if @account.update(account_params)
+        redirect_to subdomain_root_path, notice: "Your school has been updated"
+    else 
+        render :edit
+    end
   end
 
   private
   
   def account_params
-    params.require(:account).permit(:subdomain, :tagline, :description, :school_logo_attachments, :school_background_attachments, owner_attributes: [:name, :email, :password, :password_confirmation])
-      
+    # binding.pry
+    params.require(:account).permit(:subdomain, :tagline, :description, :school_logo_attachments, :school_background_attachments, owner_attributes: [:name, :email, :password, :password_confirmation]) 
   end
 
 

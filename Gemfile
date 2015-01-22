@@ -7,11 +7,15 @@ gem 'devise'
 gem 'apartment'
 gem 'simple_form'
 gem 'pry'
+gem 'better_errors'
 
 gem 'wistia-api'
 gem 'wistia-uploader'
 gem 'faraday', '~> 0.9.1'
 
+
+gem 'rmagick'
+gem 'fog', '1.24.0'
 gem 'carrierwave', '~> 0.9'
 
 gem 'bootstrap-sass', '~> 3.3.1'
@@ -34,10 +38,17 @@ group :development, :test do
     gem 'guard-livereload'
     gem 'guard-rspec'
     gem 'rspec-rails'
-    gem 'capybara'
     gem 'factory_girl_rails'
     gem 'shoulda-matchers'
-    gem 'database_cleaner'
     gem 'letter_opener'
     gem 'email_spec'
 end
+
+group :test do
+    gem "faker"
+    gem "capybara"
+    gem "database_cleaner"
+    gem "launchy"
+    gem "selenium-webdriver"
+end
+
