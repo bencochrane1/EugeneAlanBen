@@ -6,8 +6,8 @@
 
       <%= f.fields_for :owner do |o| %>
 
-        <%= o.input :name %>
-        <%= o.input :email %>
+        <%= o.input :name, class: 'form-control', data: { toggle: 'tooltip', trigger: 'hover', placement: 'left' }, title: "Enter the first and last name of the administrator you'd like to have." %>
+        <%= o.input :email, data: { toggle: 'tooltip', placement: 'top' }, title: "Enter the email you'd like to use for the administrator for your school" %>
         <%= o.input :password %>
         <%= o.input :password_confirmation %>
 
@@ -16,8 +16,8 @@
 
       <%= f.input :subdomain do %>
         <div class="input-group">
-          <%= f.input_field :subdomain, class: 'form-control' %>
-          <span class="input-group-addon">.getsensei.co</span>
+          <%= f.input_field :subdomain, class: 'form-control', data: { toggle: 'tooltip', placement: 'left' }, title: "Enter your school name to be the subdomain" %>
+          <span class="input-group-addon">.getsensei.net</span>
         </div>
       <% end %>
 

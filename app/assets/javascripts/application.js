@@ -16,3 +16,8 @@
 //= require bootstrap
 //= require_tree .
 
+
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
