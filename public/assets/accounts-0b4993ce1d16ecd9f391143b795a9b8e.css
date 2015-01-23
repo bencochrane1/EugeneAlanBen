@@ -1,0 +1,65 @@
+/* line 5, /Users/bencochrane1/ga_WDI7_new/deploy/sensei-app/app/assets/stylesheets/accounts.css.scss */
+.subdomain-title h1 {
+  margin-top: 120px;
+  text-align: left !important;
+}
+
+/* line 10, /Users/bencochrane1/ga_WDI7_new/deploy/sensei-app/app/assets/stylesheets/accounts.css.scss */
+a.school-logo img {
+  width: 45px;
+  height: 45px;
+  margin-left: 25px;
+  margin-right: 12px;
+  position: relative;
+  top: -6px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+/* line 21, /Users/bencochrane1/ga_WDI7_new/deploy/sensei-app/app/assets/stylesheets/accounts.css.scss */
+.school-title {
+  font-size: 2.5em;
+  font-weight: 400;
+  color: #fff;
+}
+
+/* line 27, /Users/bencochrane1/ga_WDI7_new/deploy/sensei-app/app/assets/stylesheets/accounts.css.scss */
+.school-logo-header {
+  position: relative;
+  top: 155px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 6px solid white;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16);
+}
+
+/* line 37, /Users/bencochrane1/ga_WDI7_new/deploy/sensei-app/app/assets/stylesheets/accounts.css.scss */
+.project_box {
+  margin-top: 1.5em;
+  height: 75px;
+  padding: 25px;
+  -webkit-transition: 0.1s all ease-in;
+  -webkit-transform-origin-x: 50%;
+  -webkit-transform-origin-y: 50%;
+  -webkit-transform-origin-z: initial;
+}
+
+/* line 47, /Users/bencochrane1/ga_WDI7_new/deploy/sensei-app/app/assets/stylesheets/accounts.css.scss */
+.project_box:hover {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.23), 0 10px 30px rgba(0, 0, 0, 0.19);
+  color: rgba(0, 0, 0, 0.84);
+  border-color: #f0f0f0;
+}
+
+/* line 54, /Users/bencochrane1/ga_WDI7_new/deploy/sensei-app/app/assets/stylesheets/accounts.css.scss */
+.navbar-material-custom-grey {
+  background-color: #252525 !important;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+/* line 59, /Users/bencochrane1/ga_WDI7_new/deploy/sensei-app/app/assets/stylesheets/accounts.css.scss */
+.navbar .navbar-nav > li > a {
+  font-weight: 400;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.19);
+}

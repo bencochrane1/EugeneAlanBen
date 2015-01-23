@@ -2,7 +2,7 @@
 #
 # require 'apartment/elevators/generic'
 # require 'apartment/elevators/domain'
-require 'apartment/elevators/subdomain'
+# require 'apartment/elevators/subdomain'
 
 #
 # Apartment Configuration
