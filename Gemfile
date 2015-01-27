@@ -2,8 +2,10 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.8'
 gem 'pg'
+
 gem 'devise'
-# gem 'devise_invitable'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 gem 'apartment'
 gem 'simple_form'
 gem 'pry'
@@ -29,8 +31,6 @@ gem 'spring',        group: :development
 gem 'jquery-ui-rails'
 gem 'ranked-model'
 gem "tzinfo-data"
-
-gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 gem 'rails_12factor', group: :production
 
