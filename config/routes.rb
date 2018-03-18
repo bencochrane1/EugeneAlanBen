@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     end
     
     # resources :users, only: :index
-    resources :subscribe
+    resources :subscribers
     resources :users
     resources :projects do
       resources :lessons
